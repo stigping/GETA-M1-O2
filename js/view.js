@@ -8,13 +8,13 @@ show();
             <svg id="chart" width="500" viewBox="0 0 80 60">
                 ${svgInnerHtml}
             </svg><br/>
-            Valgt stolpe: <i>ingen</i>
+            Selected bar: <i>none</i>
             <br />
-            Verdi:
+            Value:
             <input type="number" min="1" max="10" oninput="inputValue = this.value" />
-            <button>Legg til stolpe</button>
-            <button disabled>Endre valgt stolpe</button><br />
-            <button disabled>Fjerne valgt stolpe</button>
+            <button>Add bar</button>
+            <button disabled>Change the selected bar</button><br />
+            <button disabled>Remove selected bar</button>
             `;
     }
 
