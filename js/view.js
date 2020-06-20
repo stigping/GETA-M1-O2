@@ -11,12 +11,12 @@ function show()
         <svg id="chart" width="500" viewBox="0 0 80 60">
             ${svgInnerHtml}
         </svg><br/>
-        Selected bar: <i>none</i>
-        <br />
+        Selected bar: <i>${chosenBar}</i>
+        <br/>
         Value:
-        <input type="number" min="1" max="10" oninput="inputValue = this.value" />
+        <input type="number" min="1" max="10" oninput="inputValue = this.value"/>
         <button>Add bar</button>
-        <button disabled>Change the selected bar</button><br />
+        <button disabled>Change the selected bar</button><br/>
         <button disabled>Remove selected bar</button>
         `;
 }
@@ -30,7 +30,9 @@ function createBar(number, barNo)
     let y = 60 - height;
     let color = calcColor(1, 10, barNo);
     return `<rect width="${width}" height="${height}"
-                        x="${x}" y="${y}" fill="${color}"></rect>`;
+            x="${x}" y="${y}" fill="${color}"
+            onclick='selectBar(this.id)' id='${barNo}'>
+            </rect>`;
 }
 
 function calcColor(min, max, val)
