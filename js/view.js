@@ -17,7 +17,7 @@ function show()
         <input type="number" min="1" max="10" oninput="inputValue = this.value"/>
         <button>Add bar</button>
         <button disabled>Change the selected bar</button><br/>
-        <button disabled>Remove selected bar</button>
+        <button onclick="deleteBar(inputValue)">Remove selected bar</button>
         `;
 }
 
@@ -29,9 +29,10 @@ function createBar(number, barNo)
     let height = number * 10;
     let y = 60 - height;
     let color = calcColor(1, 10, barNo);
+    let selectable = selectedId == barNo == true && selected == true ? 'selected' : '';
     return `<rect width="${width}" height="${height}"
             x="${x}" y="${y}" fill="${color}"
-            onclick='selectBar(this.id)' id='${barNo}'>
+            onclick='selectBar(this.id)' id='${barNo}' class='${selectable}'>
             </rect>`;
 }
 
