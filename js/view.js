@@ -2,7 +2,8 @@ show(); // Creates the default view as soon as the website opens
 
 function show() // Creates the default view
 {
-    let disabled = chosenBar == 'none' ? 'disabled' : '';
+    let disabled = selectedId == 'none' ? 'disabled' : '';
+    let  = selectedId == 'none' ? 'none' : 'selectedId';
     let svgInnerHtml = '';
     for (let i = 0; i < numbers.length; i++)
     {
@@ -12,7 +13,7 @@ function show() // Creates the default view
         <svg id="chart" width="500" viewBox="0 0 80 60">
             ${svgInnerHtml}
         </svg><br/>
-        Selected bar: <i>${chosenBar}</i>
+        Selected bar: <i>${selectedId}</i>
         <br/>
         Value:
         <input type="number" min="1" max="10" oninput="inputValue = this.value"/>
@@ -30,10 +31,10 @@ function createBar(number, barNo) // Creates bars
     const width = 8;
     const spacing = 2;
     let x = (barNo - 1) * (width + spacing);
-    let height = number * 10;
+    let height = number * 5.8;
     let y = 60 - height;
     let color = calcColor(1, 10, barNo);
-    let selectable = selectedId == barNo == true && selected == true ? 'selected' : '';
+    let selectable = selectedId == barNo == true ? 'selected' : '';
     return `<rect width="${width}" height="${height}"
             x="${x}" y="${y}" fill="${color}"
             onclick='selectBar(this.id)' id='${barNo}' class='${selectable}'>
