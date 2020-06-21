@@ -22,10 +22,29 @@ function deselect()
 
 function deleteBar()
 {
-    let index = numbers.indexOf(parseInt(chosenBar));
-    if(index > -1)
+    if(chosenBar == 'none')
     {
-        numbers.splice(index, 1)
+        return;
     }
+    let indexDel = parseInt(chosenBar - 1);
+    numbers.splice(indexDel, 1);
+    deselect();
     show();
+}
+
+function changeValue()
+{
+    if(chosenBar == 'none')
+    {
+        return;
+    }
+
+    if(inputValue == null || parseInt(inputValue) < 0 || parseInt(inputValue) > 10)
+    {
+        errMsg = 'You have entered an invalid number';
+    }
+    let indexChange = parseInt(chosenBar - 1);
+    numbers.splice(indexChange, 1, inputValue);
+    deselect()
+    show()
 }

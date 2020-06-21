@@ -2,6 +2,7 @@ show();
 
 function show()
 {
+    let disabled = chosenBar == 'none' ? 'disabled' : '';
     let svgInnerHtml = '';
     for (let i = 0; i < numbers.length; i++)
     {
@@ -15,9 +16,11 @@ function show()
         <br/>
         Value:
         <input type="number" min="1" max="10" oninput="inputValue = this.value"/>
-        <button>Add bar</button><br/><br/>
-        <button disabled>Change the selected bar</button><br/><br/>
-        <button onclick="deleteBar(inputValue)">Remove selected bar</button>
+        <button>Add bar</button><br/>
+        <div>${errMsg}</div>
+        <br/>
+        <button ${disabled} onclick="changeValue()">Change the selected bar</button><br/><br/>
+        <button ${disabled} onclick="deleteBar(inputValue)">Remove selected bar</button>
         `;
 }
 
