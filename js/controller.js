@@ -8,7 +8,6 @@ function selectBar(id)
     chosenBar = id;
     selectedId = id;
     show();
-    return chosenBar;
 }
 
 function deselect()
@@ -18,7 +17,6 @@ function deselect()
     selectedId = null;
     inputValue = null;
     show();
-    return chosenBar;
 }
 
 function deleteBar()
@@ -33,7 +31,7 @@ function deleteBar()
     show();
 }
 
-function changeValue()
+function changeBar()
 {
     if(chosenBar == 'none')
     {
@@ -48,7 +46,7 @@ function changeValue()
     }
     errMsg = '';
     let indexChange = parseInt(chosenBar - 1);
-    numbers.splice(indexChange, 1, inputValue);
+    numbers.splice(indexChange, 1, parseInt(inputValue));
     deselect();
     show();
 }
@@ -63,5 +61,17 @@ function addBar()
     errMsg = '';
     numbers.push(parseInt(inputValue));
     deselect();
+    show();
+}
+
+function reset()
+{
+    deselect();
+    numbers = [7, 3, 1, 5, 8];
+    chosenBar = 'none';
+    inputValue = null;
+    selected = false;
+    selectedId;
+    errMsg = '';
     show();
 }

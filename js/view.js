@@ -19,8 +19,9 @@ function show()
         <button onclick="addBar()">Add bar</button><br/>
         <div>${errMsg}</div>
         <br/>
-        <button ${disabled} onclick="changeValue()">Change the selected bar</button><br/><br/>
-        <button ${disabled} onclick="deleteBar(inputValue)">Remove selected bar</button>
+        <button ${disabled} onclick="changeBar()">Change the selected bar</button><br/><br/>
+        <button ${disabled} onclick="deleteBar(inputValue)">Remove selected bar</button><br/><br/>
+        <button onclick="reset()">Reset</button>
         `;
 }
 
