@@ -15,6 +15,7 @@ function show() // Creates the default view
         </svg><br/>
         Selected bar: <i>${selectedId}</i>
         <br/>
+        Enter a value between 1 and 10:<br/>
         Value:
         <input type="number" min="1" max="10" oninput="inputValue = this.value"/>
         <button onclick="addBar()">Add bar</button><br/>
