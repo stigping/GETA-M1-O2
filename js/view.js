@@ -1,6 +1,6 @@
-show();
+show(); // Creates the default view as soon as the website opens
 
-function show()
+function show() // Creates the default view
 {
     let disabled = chosenBar == 'none' ? 'disabled' : '';
     let svgInnerHtml = '';
@@ -25,7 +25,7 @@ function show()
         `;
 }
 
-function createBar(number, barNo)
+function createBar(number, barNo) // Creates bars
 {
     const width = 8;
     const spacing = 2;
@@ -40,7 +40,7 @@ function createBar(number, barNo)
             </rect>`;
 }
 
-function calcColor(min, max, val)
+function calcColor(min, max, val) // Gives bars colors
 {
     var minHue = 240, maxHue = 0;
     var curPercent = (val - min) / (max - min);

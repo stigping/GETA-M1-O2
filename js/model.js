@@ -1,11 +1,9 @@
- // Help-variable for view and controller
- let contentDiv = document.getElementById('content');
+let contentDiv = document.getElementById('content'); // Help-variable for view and controller
 
- // model
- let numbers = [7, 3, 1, 5, 8];
- let chosenBar = 'none'; // Variable for which bar is selected
- let inputValue = null; // Variable for what is written in the input field
+let numbers = [7, 3, 1, 5, 8]; // Default array
+let chosenBar = 'none'; // Variable for which bar is selected
+let inputValue = null; // Variable for what is written in the input field
 
- let selected = false;
- let selectedId;
- let errMsg = '';
+let selected = false; //
+let selectedId; //
+let errMsg = ''; // Variable for the div that show an error message when an invalid number is entered in the input field

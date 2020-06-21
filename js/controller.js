@@ -1,4 +1,4 @@
-function selectBar(id)
+function selectBar(id) // Make bars able to be selected
 {
     if(selected == true && selectedId == id)
     {
@@ -10,7 +10,7 @@ function selectBar(id)
     show();
 }
 
-function deselect()
+function deselect() // Make bars able to be deselected
 {
     selected = false;
     chosenBar = 'none';
@@ -19,7 +19,7 @@ function deselect()
     show();
 }
 
-function deleteBar()
+function deleteBar() // Make bars able to be removed
 {
     if(chosenBar == 'none')
     {
@@ -31,7 +31,7 @@ function deleteBar()
     show();
 }
 
-function changeBar()
+function changeBar() // Make bars able to be changed
 {
     if(chosenBar == 'none')
     {
@@ -50,7 +50,8 @@ function changeBar()
     deselect();
     show();
 }
-function addBar()
+
+function addBar() // Make bars able to be added
 {
     if(inputValue == null || parseInt(inputValue) < 1 || parseInt(inputValue) > 10)
     {
@@ -64,7 +65,7 @@ function addBar()
     show();
 }
 
-function reset()
+function reset() // Reset everything to default
 {
     deselect();
     numbers = [7, 3, 1, 5, 8];
