@@ -39,12 +39,19 @@ function changeValue()
         return;
     }
 
-    if(inputValue == null || parseInt(inputValue) < 0 || parseInt(inputValue) > 10)
+    if(inputValue == null || parseInt(inputValue) < 1 || parseInt(inputValue) > 10)
     {
         errMsg = 'You have entered an invalid number';
     }
     let indexChange = parseInt(chosenBar - 1);
     numbers.splice(indexChange, 1, inputValue);
-    deselect()
-    show()
+    deselect();
+    show();
+}
+function addNumber()
+{
+    let indexChange = parseInt(chosenBar - 1);
+    numbers.splice(indexChange, 1, inputValue);
+    deselect();
+    show();
 }
