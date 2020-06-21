@@ -11,3 +11,11 @@ QUnit.test("Selecting and deselecting", function (assert)
 	selectBar("4");
 	assert.deepEqual(selectedId, "4", "Reselected bar 1, then selected bar 4");
 });
+
+QUnit.test("Selects bar 3 and deletes selected bar", function (assert)
+{
+	reset();
+	selectBar("3");
+	deleteBar();
+	assert.deepEqual(numbers.length, 4, "Deleted bar 3 and checked that array is equal to 4 items");
+});
