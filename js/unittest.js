@@ -28,3 +28,11 @@ QUnit.test("Selects bar 3 and changes the selected bar", function (assert)
 	changeBar();
 	assert.deepEqual(numbers[2], 6, "Changes value of bar 3 to 6");
 });
+
+QUnit.test("Adds a new bar", function (assert)
+{
+	reset();
+	inputValue = 6;
+	addBar();
+	assert.deepEqual(numbers.length, 6, "Added a new bar with value 6 and checked if array is equal to 6 items");
+});
