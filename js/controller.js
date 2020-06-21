@@ -16,6 +16,7 @@ function deselect()
     selected = false;
     chosenBar = 'none';
     selectedId = null;
+    inputValue = null;
     show();
     return chosenBar;
 }
@@ -42,16 +43,25 @@ function changeValue()
     if(inputValue == null || parseInt(inputValue) < 1 || parseInt(inputValue) > 10)
     {
         errMsg = 'You have entered an invalid number';
+        show();
+        return;
     }
+    errMsg = '';
     let indexChange = parseInt(chosenBar - 1);
     numbers.splice(indexChange, 1, inputValue);
     deselect();
     show();
 }
-function addNumber()
+function addBar()
 {
-    let indexChange = parseInt(chosenBar - 1);
-    numbers.splice(indexChange, 1, inputValue);
+    if(inputValue == null || parseInt(inputValue) < 1 || parseInt(inputValue) > 10)
+    {
+        errMsg = 'You have entered an invalid number';
+        show();
+        return;
+    }
+    errMsg = '';
+    numbers.push(parseInt(inputValue));
     deselect();
     show();
 }

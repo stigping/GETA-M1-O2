@@ -16,7 +16,7 @@ function show()
         <br/>
         Value:
         <input type="number" min="1" max="10" oninput="inputValue = this.value"/>
-        <button>Add bar</button><br/>
+        <button onclick="addBar()">Add bar</button><br/>
         <div>${errMsg}</div>
         <br/>
         <button ${disabled} onclick="changeValue()">Change the selected bar</button><br/><br/>
