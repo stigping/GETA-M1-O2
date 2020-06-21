@@ -19,3 +19,12 @@ QUnit.test("Selects bar 3 and deletes selected bar", function (assert)
 	deleteBar();
 	assert.deepEqual(numbers.length, 4, "Deleted bar 3 and checked that array is equal to 4 items");
 });
+
+QUnit.test("Selects bar 3 and changes the selected bar", function (assert)
+{
+	reset();
+	selectBar("3");
+	inputValue = 6;
+	changeBar();
+	assert.deepEqual(numbers[2], 6, "Changes value of bar 3 to 6");
+});
