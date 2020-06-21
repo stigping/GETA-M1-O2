@@ -15,8 +15,8 @@ function show()
         <br/>
         Value:
         <input type="number" min="1" max="10" oninput="inputValue = this.value"/>
-        <button>Add bar</button>
-        <button disabled>Change the selected bar</button><br/>
+        <button>Add bar</button><br/><br/>
+        <button disabled>Change the selected bar</button><br/><br/>
         <button onclick="deleteBar(inputValue)">Remove selected bar</button>
         `;
 }
